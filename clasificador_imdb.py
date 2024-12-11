@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from flask import Flask, request, jsonify
-import joblib   
+import joblib
 
 def cargar_dataset():
     df = pd.read_csv(r'C:\Users\sabas\Downloads\IMDB Dataset.csv')
@@ -41,8 +41,6 @@ def evaluar_modelo(modelo, X_test, y_test):
     y_pred = modelo.predict(X_test)
     print("Accuracy:", accuracy_score(y_test, y_pred))
     print(classification_report(y_test, y_pred))
-
-# Paso 7: Crear API con Flask
 app = Flask(__name__)
 modelo = None
 vectorizer = None
